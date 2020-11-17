@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>    
+        <payment>
+            <opennode>
+                <payment_action>authorize</payment_action>
+                <model>OpenNode\OpenNodePayment\Model\PaymentMethod</model>
+                <active>1</active>
+                <title>Pay with Bitcoin</title>
+                <api_key></api_key>
+                <redirect_url>https://checkout.opennode.com/</redirect_url>
+                <order_status>pending_payment</order_status>
+            </opennode>
+        </payment>
+    </default>
+</config>

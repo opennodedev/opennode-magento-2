@@ -1,0 +1,27 @@
+<form method="POST" action="<?= $block->getRedirectUrl() ?>" name="opennode" id="opennode">
+
+    <input type="hidden" name="api_secret" value="<?= $block->getApiKey() ?>">
+    <input type="hidden" name="api_auth_token" value="<?= $block->getApiKey() ?>">
+    <input type="hidden" name="amount" value="<?php echo $block->getOrderGrandTotal(); ?>">
+    <input type="hidden" name="currency" value="<?php echo $block->getOrderCurrency(); ?>">
+    <input type="hidden" name="order_id" value="<?php echo $block->getOrderIncrementId(); ?>">
+    <input type="hidden" name="email" value="<?php echo $block->getOrderEmail(); ?>">
+    <input type="hidden" name="name" value="<?php echo $block->getOrderCustomerName(); ?>">
+    <input type="hidden" name="callback_url" value="<?php echo $block->getCallBackUrl(); ?>">
+    <input type="hidden" name="success_url" value="<?php echo $block->getSuccessUrl(); ?>">
+
+    <input type="submit" name="submit" id="submitfrm" value="submit" style="display: none;">
+</form>
+<script>
+    require(['jquery'], function($){ 
+        console.log('SUBMITING jquery....1')
+        //your js code here  
+        jQuery(document).ready(function() {   
+
+            console.log('SUBMITING jquery....')
+            jQuery( "#submitfrm" ).trigger( "click" );
+            //jQuery('form#bankofmaldives').submit();
+        });
+    });
+</script>
+<p>Redirecting........</p>
